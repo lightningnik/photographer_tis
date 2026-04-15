@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туманов Иван — фотограф</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <input type="checkbox" id="burger-toggle" class="burger-toggle">
+            <label for="burger-toggle" class="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#portfolio" class="nav-link">Портфолио</a></li>
+                    <li><a href="#about" class="nav-link">Об авторе</a></li>
+                    <li><a href="#contacts" class="nav-link">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" style="background-image: url('photos/hero.jpg');">
+            <div class="hero-overlay"></div>
+            <div class="hero-content glass-card">
+                <h1 class="hero-title">ТУМАНОВ ИВАН</h1>
+                <p class="hero-subtitle">Портретная и документальная фотография</p>
+                <a href="#portfolio" class="btn btn--primary">Смотреть портфолио</a>
+            </div>
+            <div class="scroll-down" onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'});">↓</div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2 class="section-title">Портфолио</h2>
+                <div class="categories-grid" id="categories-grid"></div>
+            </div>
+        </section>
+
+        <section id="about" class="about glass-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="main_photo.jpg" alt="Иван Туманов" class="about-photo glass-img">
+                    </div>
+                    <div class="about-text">
+                        <h2 class="section-title">Иван Туманов</h2>
+                        <p>Я верю, что фотография — это способ остановить время и показать красоту в простоте. В своих работах я стремлюсь к естественному свету, живым эмоциям и минималистичной композиции.</p>
+                        <p>Мой стиль сформировался под влиянием классической документальной фотографии и современного портрета. Я не использую постановочные кадры — только искренние моменты.</p>
+                        <div class="equipment">
+                            <span class="equipment-label">Техника:</span> Sony A7IV · 35mm f/1.4 · 85mm f/1.8
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacts" class="contacts glass-section">
+            <div class="container">
+                <h2 class="section-title">Связаться</h2>
+                <div class="contacts-grid">
+                    <form class="contact-form glass-card" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Сообщение" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary">Отправить</button>
+                    </form>
+                    <div class="contact-info glass-card">
+                        <p class="contact-email">tumboy@example.com</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Telegram">TG</a>
+                            <a href="#" class="social-link" aria-label="WhatsApp">WA</a>
+                            <a href="#" class="social-link" aria-label="Instagram">IG</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer glass-footer">
+        <div class="container">
+            <p class="copyright">© 2025 Туманов Иван</p>
+            <div class="footer-social">
+                <a href="#" class="footer-social-link">Instagram</a>
+                <a href="#" class="footer-social-link">VK</a>
+                <a href="#" class="footer-social-link">Telegram</a>
+            </div>
+            <a href="#" class="privacy-link">Политика конфиденциальности</a>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для сетки галереи -->
+    <div id="gallery-modal" class="gallery-modal">
+        <div class="gallery-modal-content glass-card">
+            <span class="gallery-modal-close">&times;</span>
+            <h3 class="gallery-modal-title" id="gallery-modal-title"></h3>
+            <div class="gallery-grid" id="gallery-grid"></div>
+        </div>
+    </div>
+
+    <!-- Лайтбокс для увеличенного фото -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="">
+        <div class="lightbox-nav">
+            <button class="lightbox-prev">‹</button>
+            <button class="lightbox-next">›</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
